@@ -1,3 +1,4 @@
+// https://judge.yosupo.jp/problem/static_range_sum
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = int64_t;
@@ -18,10 +19,33 @@ const i64  INF = LLONG_MAX;
 typedef vec<vec<int>> adj;
 typedef vec<vec<pair<int,i64> > > wadj;
 
+int N, Q; vec<i64> arr;
+
+template<typename T>
+class PTable {
+    vec<T> pt;
+    T opr (T a, T b) { return a + b; }
+    T inv (T a, T b) { return a - b; }
+    public:
+    PTable (vec<T>& a) {
+        pt.resize(a.size());
+        rep(i,a.size()) pt[i] = !i ? a[i] : opr(pt[i-1], a[i]);
+    }
+    T q (int i, int j) { return (--i < 0) ? pt[j] : inv(pt[j], pt[i]); }
+};
+
 int main (void) {
     ios::sync_with_stdio(0); cin.tie(0);
+    cin >> N >> Q;
+    
+    arr.resize(N); rep(i,N) cin >> arr[i];
 
-    // :)
+    PTable<i64> pt(arr);
+
+    rep(q,Q) {
+        int i, j; cin >> i >> j; j--;
+        cout << pt.q(i,j) << endl;
+    }
 
     return 0;
 }

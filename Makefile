@@ -9,3 +9,6 @@ AUX_EXTS:= aux|nav|snm|log|toc|vrb|dvi|idx|fdb_latexmk|fls|out|ilg|ind
 
 clean:
 		find . -name '*.pdf' -delete
+
+CPPFLAGS = -std=c++20 -O0 -Wall -g
+CC = g++

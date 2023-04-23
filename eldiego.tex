@@ -7,8 +7,8 @@
 % \centering{\includegraphics[width=3.5cm]{fotodiego}}
 \tableofcontents\newpage
  
-\section{algorithm}%%%%%%%%%%%%%%%%%%ALGORITHM%%%%%%%%%%%%%%%%%%
-\input{algorithm.tex}
+\section{STL}%%%%%%%%%%%%%%%%%%ALGORITHM%%%%%%%%%%%%%%%%%%
+\input{stdlib.tex}
 
 
 \section{Estructuras}%%%%%%%%%%%%%%%%%%ESTRUCTURAS%%%%%%%%%%%%%%%%%%
@@ -17,15 +17,17 @@
 \subsection{Sparse table}
 Operacion asociativa \emph{idempotente}.
 \cppfile[24-38]{estructuras/sparse-table.cpp}
+\subsection{Segment tree (RMQ)}
+\cppfile[31-61]{estructuras/segtree-rmq.cpp}
 % \subsection{Fenwick Tree}
 % \cppfile{estructuras/fenwick.cpp}
-\subsection{Segment tree}
-\cppfile[1-16]{estructuras/segtree.cpp}
+% \subsection{Segment tree}
+% \cppfile[1-16]{estructuras/segtree.cpp}
 % \subsection{RMQ (lazy)}
 % \cppfile{estructuras/rmq.lazy.cpp}
 % \subsection{RMQ (persistente)}
 % \cppfile[23-53]{estructuras/rmq.persistent.cpp}
-\subsection{Disjiont Set Union}
+\subsection{Disjiont set union}
 \cppfile[22-33]{estructuras/dsu.cpp}
 % \subsection{Disjoint Intervals}
 % \cppfile{estructuras/disjoint.intervals.cpp}
@@ -321,11 +323,11 @@ $A=I+\frac{B}{2}-1$
 
 \section{Grafos}%%%%%%%%%%%%%%%%%%GRAFOS%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Euler tour}
-\cppfile[1-999]{grafos/euler-tour.cpp}
-\subsection{Toposort}
-\cppfile[1-24]{grafos/toposort.cpp}
-\subsection{Componentes fuertemente conexas}
-\cppfile[4-21]{grafos/scc.cpp}
+\cppfile[29-45]{grafos/euler-tour.cpp}
+% \subsection{Toposort}
+% \cppfile[1-24]{grafos/toposort.cpp}
+% \subsection{Componentes fuertemente conexas}
+% \cppfile[4-21]{grafos/scc.cpp}
 % \subsection{Dijkstra}
 % \cppfile{grafos/dijkstra.cpp}
 % \subsection{Bellman-Ford}
@@ -338,8 +340,8 @@ $A=I+\frac{B}{2}-1$
 % \cppfile[23-40]{grafos/prim.cpp}
 % \subsection{2-SAT + Tarjan SCC}
 % \cppfile{grafos/2sat.cpp}
-\subsection{Puentes y puntos de articulación}
-\cppfile[6-23]{grafos/bridge-art.cpp}
+% \subsection{Puentes y puntos de articulación}
+% \cppfile[6-23]{grafos/bridge-art.cpp}
 % \subsection{Comp. Biconexas y Puentes}
 % \cppfile[28-76]{grafos/biconexas.bridge.cpp}
 % \subsection{LCA + Climb}

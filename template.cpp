@@ -1,4 +1,4 @@
-// Básico
+// Basico
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i,N) for (int i = 0; i < int(N); i++)
@@ -6,9 +6,10 @@ using namespace std;
 #define vec vector
 #define pb push_back
 #define endl '\n'
-// i64 + INF
+// INF
+const int INF = INT_MAX;
 using i64 = int64_t;
-const i64  INF = LLONG_MAX;
+const i64 lINF = LLONG_MAX;
 // Adj
 typedef vec<vec<int>> adj;
 typedef vec<vec<pair<int,i64> > > wadj;
@@ -20,7 +21,7 @@ typedef vec<vec<pair<int,i64> > > wadj;
 #define forall(it,v) for(auto it = v.begin(); it != v.end(); it++)
 #define printall(v) forall(x,v){cout << *x << " ";} cout << endl
 #define printpair(p) cout << "(" << p.fst << ", " << p.snd << ")" << endl
-// Misc.
+// Misc
 const int MAXN = 5e5;
 #define log2fl(x) (x ? 63 - __builtin_clzll(x) : -1)
 

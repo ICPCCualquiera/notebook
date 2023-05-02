@@ -23,5 +23,8 @@
 # Mierda del latex
 *.tex.swp
 
-# basura del gummi
+# Basura del gummi
 .fuse_hidden*
+
+# PDF
+*.pdf

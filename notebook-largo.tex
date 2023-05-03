@@ -8,12 +8,15 @@
 
 \section{Estructuras}
     \subsection{Prefix table}
-        \cppfile[24-35]{estructuras/prefix-table.cpp}
+        \texttt{PTable<i64> pt = \{arr, arr.size()\}; pt.make();}
+        \cppfile[29-39]{estructuras/prefix-table.cpp}
     \subsection{Sparse table}
-        Operacion asociativa \emph{idempotente}.
-        \cppfile[24-38]{estructuras/sparse-table.cpp}
+    Operacion asociativa \emph{idempotente}. \\
+    \texttt{STable<int> st = \{arr, arr.size()\}; st.make();}
+        \cppfile[22-35]{estructuras/sparse-table.cpp}
     \subsection{Segment tree (RMQ)}
-        \cppfile[31-61]{estructuras/segtree-rmq.cpp}
+        \texttt{SegTree<int> st = \{arr, N\}; st.make();}
+        \cppfile[31-63]{estructuras/segtree-rmq.cpp}
     \subsection{Disjiont set union}
         \cppfile[22-33]{estructuras/dsu.cpp}
 
@@ -26,11 +29,15 @@
         \cppfile[1-6]{math/criba.cpp}
 
 \section{Grafos}
+    \subsection{LCA: O(N) preprocess}
+        \texttt{LCA lca = \{G, G.size()\}; lca.make(root);}
+        \cppfile[29-66]{grafos/lca.cpp}
     \subsection{Euler tour}
-        \cppfile[29-45]{grafos/euler-tour.cpp}
+        \texttt{ETour et = \{G, N\}; et.make(0);}
+        \cppfile[29-44]{grafos/euler-tour.cpp}
 
 \section{Template}
-        \cppfile[1-999]{template.cpp}
+        \cppfile[1-34]{template.cpp}
 
 \section{Misc.}
     \input{compilar.tex}

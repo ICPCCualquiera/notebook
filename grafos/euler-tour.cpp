@@ -27,19 +27,18 @@ const int MAXN = 5e5;
 adj g; int N;
 
 struct ETour {
-    adj& g;
-    vec<int> tour, de, tin, tout; int t;
-    void dfs (int u, int h) {
-        de.pb(h);
-        tour.pb(u);    tin[u] = t++;
-        forall(v,g[u]) dfs(*v, h+1);
-        tour.pb(u);    tout[u] = t++;
-        de.pb(h);
+    vector<vector<int>>& adj; int N;
+    vector<int> tour, first, depth;
+    void dfs (int u, int d = 0) {
+        depth[u] = d;
+        first[u] = tour.size();
+        tour.push_back(u);
+        for (int v : adj[u]) { dfs(v,d+1); tour.push_back(u); }
     }
-    void make (int s) {
-        tin.resize(g.size() * 2);
-        tout.resize(g.size() * 2);
-        dfs(s,0);
+    void make (int r) {
+        first.resize(N);
+        depth.resize(N);
+        dfs(r);
     }
 };
 
@@ -51,13 +50,13 @@ int main (void) {
         g[p].pb(u);
     }
 
-    ETour et = {g}; et.make(0);
+    ETour et = {g, N}; et.make(0);
 
     forall(v,et.tour) { cout << *v + 1 << " "; } cout << endl;
 
-    forall(v,et.de) { cout << *v << " "; } cout << endl;
+    forall(v,et.tour) { cout << et.depth[*v] << " "; } cout << endl;
 
-    printpair(mp(et.tin[1], et.tout[1]));
+    forall(v,et.tour) { cout << et.first[*v] << " "; } cout << endl;
 
     return 0;
 }

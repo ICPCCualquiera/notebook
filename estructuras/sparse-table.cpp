@@ -19,17 +19,14 @@ const i64  INF = LLONG_MAX;
 typedef vec<vec<int>> adj;
 typedef vec<vec<pair<int,i64> > > wadj;
 
-int N, Q; vec<int> arr;
-
-template<typename T>
-class STable {
+template<class T> struct STable {
+    vec<T>& arr; int N;
     vec<vec<T>> st;
     T op (T a, T b) { return min(a,b); }
-    public:
-    STable (vec<T>& a) {
-        st.resize(20, vec<T>(a.size()));
-        st[0] = a; scn(w,1,19) scn(i,0,a.size()-(1<<w))
-            st[w][i] = op(st[w-1][i], st[w-1][i+(1<<(w-1))]);
+    void make () {
+        st.resize(20, vec<T>(N));
+        st[0] = arr; scn(w,1,19) scn(i,0,N - (1 << w))
+            st[w][i] = op(st[w-1][i], st[w-1][i + (1 << (w-1))]);
     }
     T q (int i, int j) {
         int w = log2fl(j - i + 1);
@@ -39,11 +36,10 @@ class STable {
 
 int main (void) {
     ios::sync_with_stdio(0); cin.tie(0);
-    cin >> N >> Q;
+    int N, Q; cin >> N >> Q;
+    vec<int> arr; arr.resize(N); rep(i,N) cin >> arr[i];
 
-    arr.resize(N); rep(i,N) cin >> arr[i];
-
-    STable<int> st(arr);
+    STable<int> st = {arr, N}; st.make();
 
     rep(q,Q) {
         int i, j; cin >> i >> j; j--;

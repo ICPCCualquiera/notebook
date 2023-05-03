@@ -28,35 +28,37 @@ const int MAXN = 5e5;
 
 int N, Q; vec<int> arr;
 
-struct STree {
-    vec<int> &a; int n;
-    int id = INF; int op (int a, int b) { return min(a,b); }
-    vec<int> t;
-    int build (int v, int i, int j) {
-        if (i == j) return t[v] = a[i];
+template<class T> struct SegTree {
+    vector<T>& arr; int N;
+    T op (T a, T b) { return min(a,b); }
+    T ne = INT_MAX;
+    vector<T> tree;
+    T build (int v, int i, int j) {
+        if (i == j) return tree[v] = arr[i];
         int m = (i + j) / 2;
-        int l = build(2*v,   i,   m);
-        int r = build(2*v+1, m+1, j);
-        return t[v] = op(l,r);
+        T u1 = build(2*v, i, m);
+        T u2 = build(2*v+1, m+1, j);
+        return tree[v] = op(u1,u2);
     }
-    int qur (int v, int i, int j, int qi, int qj) {
-        if (qi > qj) return id;
-        if (i == qi && j == qj) return t[v];
+    T query (int v, int i, int j, int ti, int tj) {
+        if ( j < ti || tj <   i) return ne;
+        if (ti <= i &&  j <= tj) return tree[v];
         int m = (i + j) / 2;
-        int l = qur(2*v,   i,   m, qi,           min(m, qj));
-        int r = qur(2*v+1, m+1, j, max(m+1, qi), qj);
-        return op(l,r);
-    } int qu (int i, int j) { return qur(1,0,n-1,i,j); }
-    void upr (int v, int i, int j, int k, int u) {
-        if (i == j) {t[v] = u; return;}
+        T u1 = query(2*v, i, m, ti, tj);
+        T u2 = query(2*v+1, m+1, j, ti, tj);
+        return op(u1, u2);
+    } T qu (int i, int j) { return query(1, 0, N-1, i, j); }
+    T update (int v, int i, int j, int k, int u) {
+        if (k < i || j < k) return tree[v];
+        if (i == j) return tree[v] = u;
         int m = (i + j) / 2;
-        k <= m ? upr(2*v, i, m, k, u) : upr(2*v+1, m+1, j, k, u);
-        t[v] = op(t[2*v], t[2*v+1]);
-    } void up (int k, int u) { upr(1,0,n-1,k,u); }
-    void make () {
-        n = a.size();
-        t.assign(n*4, id);
-        build(1,0,n-1);
+        T u1 = update(2*v, i, m, k, u);
+        T u2 = update(2*v+1, m+1, j, k, u);
+        return tree[v] = op(u1,u2);
+    } void up (int k, int u) { update(1, 0, N-1, k, u); }
+    void make (void) {
+        tree.resize(N << 2);
+        build(1, 0, N-1);
     }
 };
 
@@ -65,10 +67,17 @@ int main (void) {
 
     cin >> N >> Q;
     rep(i,N) { int x; cin >> x; arr.pb(x); }
-    STree st = {arr}; st.make();
-    rep(q,Q) {
-        int i, j; cin >> i >> j; i--, j--;
-        cout << st.qu(i,j) << endl;
+    SegTree<int> st = {arr, N}; st.make();
+    rep(q,Q){
+        int t; cin >> t;
+        if (t == 1) {
+            int k, u; cin >> k >> u; k--;
+            st.up(k,u);
+        }
+        if (t == 2) {
+            int i, j; cin >> i >> j; i--, j--;
+            cout << st.qu(i,j) << endl;
+        }
     }
 
     return 0;

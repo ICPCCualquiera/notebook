@@ -7,26 +7,9 @@ make clean
 ```
 
 TODO:
-+ STL:
-  + order statistics tree
-  + priority_queue con comparador custom
-+ Matemática:
-  + pow
-  + criba, isprime O(sqrt(n)/log(n))
-+ ST con lazy updates
-+ Crear sección brainstorming
-```
-template <typename T>
-T setleft (set<T>& s, T x, T def) {
-    if (s.empty() || *s.begin() >= x) return def;
-    if (*--s.end() < x) return *--s.end();
-    return *--s.lower_bound(x);
-}
-
-template <typename T>
-T setright (set<T>& s, T x, T def) {
-    if (s.empty() || *--s.end() <= x) return def;
-    if (*s.begin() > x) return *s.begin();
-    return *s.upper_bound(x);
-}
-```
++ STL: priority_queue con comparador custom
++ Math: pow mod n
++ Estructuras: ST con lazy updates
++ Estructuras: order statistics set (no multiset)
++ Estructuras: __gnu_pbds trie con búsqueda por prefix range (https://ideone.com/6VFNZl)
++ Nueva seccion: brainstorming?

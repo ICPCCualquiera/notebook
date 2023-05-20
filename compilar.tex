@@ -2,10 +2,12 @@
 // Makefile
 CPPFLAGS = -std=c++20 -O0 -Wall -g
 CC = g++
+
 // comp.sh: compilar $1 y mostrar primeras $2 lineas de error
 rm -f $1
 clear
 make $1 2>&1 | head -$2
+
 // run.sh: correr $1 con $2 como input
 rm -f $1
 clear

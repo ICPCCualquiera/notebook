@@ -1,28 +1,24 @@
-https://judge.yosupo.jp/problem/unionfind
+// https://judge.yosupo.jp/problem/unionfind
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = int64_t;
-const int MAXN = 5e5;
-const i64  INF = LLONG_MAX;
-#define endl '\n'
-#define rep(i,N) for (int i = 0; i < int(N); i++)
+#define rep(i,N)   for (int i = 0; i < int(N); i++)
 #define scn(k,i,j) for (int k = int(i); k <= int(j); k++)
-#define forall(it,v) for(auto it = v.begin(); it != v.end(); it++)
-#define printall(v) forall(x,v){cout << *x << " ";} cout << endl
-#define vec vector
-#define pb push_back
-#define mp make_pair
-#define printpair(p) cout << "(" << p.fst << ", " << p.snd << ")" << endl
+#define pb         push_back
+#define endl       '\n'
+// Pair
+#define mp  make_pair
 #define fst first
 #define snd second
-#define log2fl(x) (x ? 63 - __builtin_clzll(x) : -1)
-typedef vec<vec<int>> adj;
-typedef vec<vec<pair<int,i64> > > wadj;
+// Print
+#define forall(it,v) for(auto it = v.begin(); it != v.end(); it++)
+#define printall(v)  forall(x,v){cout << *x << " ";} cout << endl
+#define printpair(p) cout << "(" << p.fst << ", " << p.snd << ")" << endl
 
 struct DSU {
-    vec<int> p, w; int nc;
-    DSU (int n) { nc = n; p.resize(n); w.resize(n); rep(i,n) { p[i] = i, w[i] = 1; } }
-    int get  (int x) { return p[x] == x ? x : p[x] = get(p[x]); }
+    vector<int> p, w; int nc;
+    DSU (int n) { nc = n; p.resize(n); w.resize(n); rep(i,n) p[i] = i, w[i] = 1; }
+    int get (int x) { return p[x] == x ? x : p[x] = get(p[x]); }
     void join (int x, int y) {
         x = get(x), y = get(y);
         if (x == y) return;

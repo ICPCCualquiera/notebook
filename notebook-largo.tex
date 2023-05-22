@@ -6,7 +6,7 @@
 
 \section{Preámbulo}
     \subsection{Template}
-        \cppfile[1-23]{preambulo/template.cpp}
+        \cppfile[1-21]{preambulo/template.cpp}
     \subsection{Shell}
         \input{preambulo/compilar.tex}
 
@@ -17,55 +17,55 @@
     %     \cppfile[31-41]{stl/lower_bound.cpp}  % DEBUGGEAR POR FAVOR
     \subsection{Order statistics multiset}
         \textbf{Warning: es pesado.} Ver time limit del problema.
-        \cppfile[18-32]{estructuras/order-stats-multiset.cpp}
+        \cppfile[16-30]{estructuras/order-stats-multiset.cpp}
 
 \section{Estructuras}
     \subsection{Prefix table}
         \texttt{PTable pt = \{arr, arr.size()\}; pt.make();}
-        \cppfile[18-27]{estructuras/prefix-table.cpp}
+        \cppfile[16-25]{estructuras/prefix-table.cpp}
 
     \subsection{Sparse table}
         Operacion asociativa \textbf{idempotente}. \\
         \texttt{STable st = \{arr, arr.size()\}; st.make();}
-        \cppfile[19-32]{estructuras/sparse-table.cpp}
+        \cppfile[17-30]{estructuras/sparse-table.cpp}
 
     \subsection{Segment tree (RMQ)}
-        \texttt{SegTree<int> st = \{arr, N\}; st.make();}
-        \cppfile[18-37]{estructuras/segtree-rmq.cpp}
+        \texttt{SegTree<int> st = \{arr, arr.size()\}; st.make();}
+        \cppfile[16-35]{estructuras/segtree-rmq.cpp}
 
     \subsection{Disjiont set union}
         \texttt{DSU dsu(N);}
-        \cppfile[18-29]{estructuras/dsu.cpp}
+        \cppfile[16-30]{estructuras/dsu.cpp}
 
 
 \section{Algoritmos}
     \subsection{Búsqueda binaria}
         Si existe, idx de primer \texttt{true}
         Si no, \texttt{i - 1}
-        \cppfile[36-44]{algos/dbisect.cpp}
+        \cppfile[34-42]{algoritmos/dbisect.cpp}
 
 
 \section{Matemática}
     \subsection{Cuentas}
-        \cppfile[17-18]{math/cuentas.cpp}
+        \cppfile[15-16]{math/cuentas.cpp}
 
     \subsection{Sqrt}
-        \cppfile[18-22]{math/sqrt.cpp}
+        \cppfile[30-34]{math/primetest.cpp}
 
     \subsection{Prime test}
-        \cppfile[18-30]{math/primetest.cpp}
+        \cppfile[16-28]{math/primetest.cpp}
         
 \section{Grafos}
     \subsection{Preámbulo}
         \cppfile[1-2]{grafos/preambulo.cpp}
         
     \subsection{Euler tour}
-        \texttt{ETour et = \{G, N\}; et.make(0);}
-        \cppfile[29-44]{grafos/euler-tour.cpp}
+        \texttt{ETour et = \{G, G.size()\}; et.make(0);}
+        \cppfile[18-26]{grafos/euler-tour.cpp}
         
-    \subsection{LCA: O(N) preprocess}
-        \texttt{LCA lca = \{G, G.size()\}; lca.make(root);}
-        \cppfile[29-66]{grafos/lca.cpp}
+    \subsection{LCA}
+        \texttt{LCA lca = \{G, G.size(), root\}; lca.make();}
+        \cppfile[19-43]{grafos/lca.cpp}
 
 \section{Misc.}
     \subsection{Operaciones de bits}

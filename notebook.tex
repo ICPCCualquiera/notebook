@@ -16,8 +16,7 @@
     % \subsection{Lower\_bound, upper\_bound}     % TIRA WRONG ANSWER
     %     \cppfile[31-41]{stl/lower_bound.cpp}  % DEBUGGEAR POR FAVOR
     \subsection{Order statistics multiset}
-        \textbf{Warning: es pesado.} Ver time limit del problema.
-        \cppfile[16-30]{estructuras/order-stats-multiset.cpp}
+        \cppfile[16-30]{stl/order-stats-multiset.cpp}
 
 \section{Estructuras}
     \subsection{Prefix table}
@@ -29,9 +28,9 @@
         \texttt{STable st = \{arr, arr.size()\}; st.make();}
         \cppfile[17-30]{estructuras/sparse-table.cpp}
 
-    \subsection{Segment tree (RMQ)}
-        \texttt{SegTree<int> st = \{arr, arr.size()\}; st.make();}
-        \cppfile[16-35]{estructuras/segtree-rmq.cpp}
+    \subsection{Segment tree (point set)}
+        \texttt{SegTree<int> st = \{arr, arr.size(), id\}; st.make();}
+        \cppfile[16-34]{estructuras/segtree-rmq.cpp}
 
     \subsection{Disjiont set union}
         \texttt{DSU dsu(N);}
@@ -65,7 +64,7 @@
         
     \subsection{LCA}
         \texttt{LCA lca = \{G, G.size(), root\}; lca.make();}
-        \cppfile[19-43]{grafos/lca.cpp}
+        \cppfile[19-47]{grafos/lca.cpp}
 
 \section{Misc.}
     \subsection{Operaciones de bits}

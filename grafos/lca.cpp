@@ -40,6 +40,10 @@ struct LCA {
         int w = log2fl(j - i + 1);
         return op(st[w][i], st[w][j - (1 << w) + 1]);
     }
+    int di (int u, int v) {
+        int c = q(u,v);
+        return d[u] + d[v] - 2*d[c];
+    }
 };
 
 int main (void) {

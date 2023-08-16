@@ -4,71 +4,164 @@
 \tableofcontents\newpage
 
 
-\section{Preámbulo}
+\section{Setup}
     \subsection{Template}
-        \cppfile[1-21]{preambulo/template.cpp}
-    \subsection{Shell}
-        \input{preambulo/compilar.tex}
+        \cppfile[1-21]{setup/template.cpp}
+    \subsection{Makefile}
+        \input{setup/makefile.tex}
+    \subsection{Compilar}
+        Compilar \$1 y mostrar primeras \$2 lineas de error
+        \input{setup/compilar.tex}
+    \subsection{Correr}
+        Correr \$1 con el input \$2
+        \input{setup/correr.tex}
 
 \section{STL}
-    \subsection{Resumen}
-        \input{stl/resumen.tex}
-    % \subsection{Lower\_bound, upper\_bound}     % TIRA WRONG ANSWER
-    %     \cppfile[31-41]{stl/lower_bound.cpp}  % DEBUGGEAR POR FAVOR
-    \subsection{Order statistics multiset}
-        \cppfile[16-30]{stl/order-stats-multiset.cpp}
+    \subsection{Búsqueda binaria en vector ordenado}
+        \cppfile[1-99]{stl/busqueda_binaria.cpp}
+    \subsection{Priority queue custom compare}
+        \cppfile[1-99]{stl/priority_queue_custom.cpp}
+    \subsection{Intervalos consecutivos}
+        \cppfile[1-99]{stl/intervalos_consecutivos.cpp}
+    \subsection{Indexed set y multiset}
+        \cppfile[1-99]{stl/indexed_set.cpp}
+        
+\section{Range queries}
+\subsection{Prefix table}
+    \subsubsection{Range query point update}
+        \cppfile[1-99]{estructuras_rango_grupo/prefix_table_range_query.cpp}
+    \subsubsection{Range update point query}
+        \cppfile[1-99]{estructuras_rango_grupo/prefix_table_range_update.cpp}
+\subsection{Fenwick tree}
+    \subsubsection{Range query point update}
+        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
+    \subsubsection{Range update point query}
+        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
+    \subsubsection{Range update range query}
+        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
+\subsection{Operaciones sin inverso}
+    \subsubsection{Sparse table}
+        Operacion asociativa \textbf{idempotente}
+        \cppfile[1-99]{estructuras_rango_monoide/sparse_table.cpp}
+    \subsubsection{Segment tree: range query point set}
+        Recordatorio: modificar elemento neutro
+        \cppfile[1-99]{estructuras_rango_monoide/segment_tree.cpp}
+       
+\section{Grafos}
+\subsection{Preprocesamiento}
+    \subsubsection{Clasificación de aristas}
+%       \cppfile[1]{preprocesamiento_grafos/.cpp}
+    \subsubsection{Puentes y puntos de articulación}
+%       \cppfile[1]{preprocesamiento_grafos/.cpp}
+    \subsubsection{DAG condensado}
+%       \cppfile[1]{preprocesamiento_grafos/.cpp}
+    \subsubsection{Kruskal}
+%       \cppfile[1]{preprocesamiento_grafos/.cpp}
+\subsection{Menor camino}
+    \subsubsection{BFS}
+        % \cppfile[1]{menor_camino_grafo/.cpp}
+    \subsubsection{Dijkstra}
+        % \cppfile[1]{menor_camino_grafo/.cpp}
+    \subsubsection{Floyd-Warshall}
+        % \cppfile[1]{menor_camino_grafo/.cpp}
+\subsection{Flujo y corte}
+    \subsubsection{Dinics}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Maximum matching}
+        % \cppfile[1]{/.cpp}
+\subsection{Árboles}
+    \subsubsection{Aplanamiento}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Ancestro común menor}
+        % \cppfile[1]{/.cpp}
+        
+\section{Strings}
+    \subsection{Trie: policy based}
+        % \cppfile[1]{/.cpp}
+    \subsection{Trie genérico}
+        % \cppfile[1]{/.cpp}
+    \subsection{Rabin-Karp}
+        % \cppfile[1]{/.cpp}
+    \subsection{Suffix Automata}
+        % \cppfile[1]{/.cpp}
 
-\section{Estructuras}
-    \subsection{Prefix table}
-        \texttt{PTable pt = \{arr, arr.size()\}; pt.make();}
-        \cppfile[16-25]{estructuras/prefix-table.cpp}
-
-    \subsection{Sparse table}
-        Operacion asociativa \textbf{idempotente}. \\
-        \texttt{STable st = \{arr, arr.size()\}; st.make();}
-        \cppfile[17-30]{estructuras/sparse-table.cpp}
-
-    \subsection{Segment tree (point set)}
-        \texttt{SegTree<int> st = \{arr, arr.size(), id\}; st.make();}
-        \cppfile[16-34]{estructuras/segtree-rmq.cpp}
-
-    \subsection{Disjiont set union}
-        \texttt{DSU dsu(N);}
-        \cppfile[16-30]{estructuras/dsu.cpp}
-
+\section{Matemática}
+\subsection{Aritmética}
+    \subsubsection{Techo de la división, piso de la raiz cuadrada, piso del log2}
+        \cppfile[1]{aritmetica/aritmetica.cpp}
+    \subsubsection{Aritmética en Zp}
+        \cppfile[1]{aritmetica/aritmetica_zp.cpp}
+    \subsubsection{Números combinatorios}
+        % \cppfile[9-9]{aritmetica/.cpp}
+\subsection{Teoría de números}
+\subsubsection{Test de primalidad}
+    \cppfile[1-99]{matematica/primetest.cpp}
+\subsection{Geometría}
+    \subsubsection{Template base}
+        \cppfile[1]{geometria/template_base.cpp}
+    \subsubsection{Punto/vector/recta}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Producto escalar y vectorial}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Área triángulo}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Fórmula de Herón}
+    % \cppfile[1]{/.cpp}
+    
+\section{Programación Dinámica}
+\subsection{Ejemplos de DP}
+    \subsubsection{DP en prefijo: }
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP en rango: }
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP en bitmask: traveling salesman}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP en árbol con toposort}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP en DAG: }
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP en número: knapsack}
+    % \cppfile[1]{/.cpp}
+    \subsubsection{Re-rooting DP}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{DP con Fenwick: número de subsecuencias de largo k}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Reconstruir solución}
+        % \cppfile[1]{/.cpp}
+\subsection{Optimizaciones}
+    \subsubsection{Recuperar un parámetro a partir de los otros}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Reducir complejidad de transición con una flag}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Optimización knapsack en árbol}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Optimización de Knuth}
+        % \cppfile[1]{/.cpp}
+    \subsubsection{Optimización D\&C}
+        % \cppfile[1]{/.cpp}
 
 \section{Algoritmos}
     \subsection{Búsqueda binaria}
         Si existe, idx de primer \texttt{true}
-        Si no, \texttt{i - 1}
-        \cppfile[34-42]{algoritmos/dbisect.cpp}
+        Si no, \texttt{d}
+        \cppfile[1-99]{algoritmos/busq_binaria.cpp}
+    \subsection{Búsqueda binaria paralela}
+    %   \cppfile[1-99]{algoritmos/.cpp}
 
+\section{Sin categorizar}
+    \subsection{Union find}
+    \subsection{Algoritmo de Mo}
+    \subsection{Min dequeue}
+    \subsection{Menor subarray que suma k}
+    \subsection{Subarray con mayor suma}
+    \subsection{Mayor subcadena común}
 
-\section{Matemática}
-    \subsection{Cuentas}
-        \cppfile[15-16]{math/cuentas.cpp}
-
-    \subsection{Sqrt}
-        \cppfile[30-34]{math/primetest.cpp}
-
-    \subsection{Prime test}
-        \cppfile[16-28]{math/primetest.cpp}
-        
-\section{Grafos}
-    \subsection{Preámbulo}
-        \cppfile[1-2]{grafos/preambulo.cpp}
-        
-    \subsection{Euler tour}
-        \texttt{ETour et = \{G, G.size()\}; et.make(0);}
-        \cppfile[18-26]{grafos/euler-tour.cpp}
-        
-    \subsection{LCA}
-        \texttt{LCA lca = \{G, G.size(), root\}; lca.make();}
-        \cppfile[19-47]{grafos/lca.cpp}
-
-\section{Misc.}
-    \subsection{Operaciones de bits}
-        \cppfile{misc/bits.cpp}
-
+\section{Brainstorming}
+Graficar como puntos/grafos \\
+Pensarlo al revez \\
+¿Que propiedades debe cumplir una solución? \\
+Si existe una solución, ¿existe otra más simple? \\
+¿Hay elecciones independientes? \\
+¿El proceso es parecido a un algoritmo conocido? \\
 
 \end{document}

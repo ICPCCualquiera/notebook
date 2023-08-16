@@ -5,32 +5,7 @@ make notebook.pdf
 make clean
 ```
 
-TODO:
-+ STL:
-  + lower_bound / upper_bound
-  + multiset
-  + order statistics set (no multiset)
-  + renombralo a "indexed set"
-  + priority_queue con comparador custom
-  + __gnu_pbds trie con búsqueda por prefix range (https://ideone.com/6VFNZl)
-+ Math: pow mod n
-+ Algoritmos:
-  + parallel binary search
-  + Mo
-+ Operaciones comunes:
-  + RMQ
-  + Valor más frequente
-  + Range add point query
-+ Estructuras genéricas:
-  + linked list
-  + FT
-+ Grafos:
-  + Subtree queries -> range queries
-  + SCC y grafo condensado
-  + maximum matching
-+ Nueva seccion: brainstorming?
-+ Reescribir estructuras para aceptar tipos genéricos así:
-
+Idea:
 ```C++
 // Valor
 struct Val {

@@ -9,6 +9,12 @@ AUX_EXTS:= aux|nav|snm|log|toc|vrb|dvi|idx|fdb_latexmk|fls|out|ilg|ind
 
 clean:
 		find . -name '*.pdf' -delete
+		find . -name '*.aux' -delete
+		find . -name '*.fls' -delete
+		find . -name '*.log' -delete
+		find . -name '*.toc' -delete
+		find . -name '*.fdb_latexmk' -delete
+		find . -name '*.out' -delete
 
 CPPFLAGS = -std=c++20 -O0 -Wall -g
 CC = g++

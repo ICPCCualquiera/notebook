@@ -27,11 +27,13 @@
         \cppfile[1-99]{stl/indexed_set.cpp}
         
 \section{Range queries}
-\subsection{Prefix table}
-    \subsubsection{Range query point update}
-        \cppfile[1-99]{estructuras_rango_grupo/prefix_table_range_query.cpp}
-    \subsubsection{Range update point query}
-        \cppfile[1-99]{estructuras_rango_grupo/prefix_table_range_update.cpp}
+\subsection{Prefix + diff arrays}
+    \subsubsection{1D}
+        Usar array indexado desde $1$ con \texttt{A[0] = 0}. \\
+        Usar intervalos cerrado-cerrado (indexados desde $1$).
+        \cppfile[1-99]{range-queries/prefix-diff/1D.cpp}
+    \subsubsection{2D}
+        % \cppfile[1-99]{range-queries/prefix-diff/2D.cpp}
 \subsection{Fenwick tree}
     \subsubsection{Range query point update}
         % \cppfile[1-99]{estructuras_rango_grupo/.cpp}

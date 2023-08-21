@@ -1,16 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = int64_t;
-#define rep(i,N)   for (int i = 0; i < int(N); i++)
-#define scn(k,i,j) for (int k = int(i); k <= int(j); k++)
-#define all(v)     begin(v), end(v)
-#define pb         push_back
-#define endl       '\n'
-#define mp  make_pair
-#define fst first
-#define snd second
-#define forall(it,v) for(auto it = v.begin(); it != v.end(); it++)
-#define printall(v)  forall(x,v){cout << *x << " ";} cout << endl
+#define endl         '\n'
+#define forn(i,N)    for (int i = 0; i < int(N); i++)
+#define dbg(x)       cerr << #x << " = " << (x) << endl
+#define raya         cerr << "================" << endl
+#define all(v)       begin(v), end(v)
+#define pb           push_back
+#define mp           make_pair
+#define fst          first
+#define snd          second
+#define forall(it,v) for (auto it = begin(v); it != end(v); it++)
+#define printall(v)  forall(x,v) { cout << *x << " "; } cout << endl
 #define printpair(p) cout << "(" << p.fst << ", " << p.snd << ")" << endl
 
 int main (void) {

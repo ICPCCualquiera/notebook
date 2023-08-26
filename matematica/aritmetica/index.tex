@@ -1,0 +1,16 @@
+\subsection{Aritmética}
+    \textbf{Techo de la división}
+    \begin{verbatim}
+        #define ceildiv(a,b) ((a + b - 1) / b)
+    \end{verbatim}
+
+    \textbf{Piso de la raiz cuadrada}
+    \lstinputlisting{\currfiledir piso_sqrt.cpp}
+
+    \textbf{Piso del log2}
+    \begin{verbatim}
+        #define log2fl(x) (x ? 63 - __builtin_clzll(x) : -1)
+    \end{verbatim}
+
+    \textbf{Aritmética en Zp}
+    \lstinputlisting{\currfiledir aritmetica_zp.cpp}

@@ -15,7 +15,7 @@ struct IntervalosConsecutivos {
         L[j - k]++;
         I.insert(k);
     }
-    i64 max_intervalo () {
+    int max_intervalo () {
         return (*L.rbegin()).fst;
     }
 };

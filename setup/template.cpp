@@ -1,4 +1,4 @@
-git add#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define endl         '\n'
 #define forn(i,N)    for (int i = 0; i < int(N); i++)
@@ -9,8 +9,8 @@ using namespace std;
 #define printall(v)  forall(x,v) { cout << *x << " "; } cout << endl
 #define printpair(p) cout << "(" << p.first << ", " << p.second << ")" << endl
 
-int main (void) {
-    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+int main () { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
 
 
     return 0;

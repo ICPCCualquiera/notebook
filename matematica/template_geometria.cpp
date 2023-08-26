@@ -12,5 +12,3 @@ struct Vec {
 };
 
 int norma2 (Vec p) { return p.x * p.x + p.y * p.y; }
-
-// TODO: area triangulo, formula de heron

@@ -1,9 +1,11 @@
 template<class T> struct SegTree {
-    vector<T>& arr; int N; T id;
-    T op (T a, T b) { return 0; } // !
+    vector<T>& arr; int N;
+    // Elegir operacion y neutro
+    T id;
+    T op (T a, T b) { return 0; }
     vector<T> t;
     void make () {
-        t.resize(N << 1); rep(i,N) t[i+N] = arr[i];
+        t.resize(N << 1); forn(i,N) t[i+N] = arr[i];
         for (int i = N - 1; i; i--) t[i] = op(t[i<<1], t[i<<1|1]);
     }
     void set (int i, T v) {
@@ -17,3 +19,9 @@ template<class T> struct SegTree {
         } return res;
     }
 };
+
+// Usar asi:
+vector<int> A = {...};
+
+SegTree<int> segtree = {A, A.size(), 0};
+segtree.make();

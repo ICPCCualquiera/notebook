@@ -3,169 +3,25 @@
 \def\title{Notebook}
 \tableofcontents\newpage
 
+\input{setup/index.tex}
 
-\section{Setup}
-    \subsection{Template}
-        \cppfile[1-21]{setup/template.cpp}
-    \subsection{Makefile}
-        \input{setup/makefile.tex}
-    \subsection{Compilar}
-        Compilar \$1 y mostrar primeras \$2 lineas de error
-        \input{setup/compilar.tex}
-    \subsection{Correr}
-        Correr \$1 con el input \$2
-        \input{setup/correr.tex}
+\input{stl/index.tex}
 
-\section{STL}
-    \subsection{Búsqueda binaria en vector ordenado}
-        \cppfile[1-99]{stl/busqueda_binaria.cpp}
-    \subsection{Priority queue custom compare}
-        \cppfile[1-99]{stl/priority_queue_custom.cpp}
-    \subsection{Intervalos consecutivos}
-        \cppfile[1-99]{stl/intervalos_consecutivos.cpp}
-    \subsection{Indexed set y multiset}
-        \cppfile[1-99]{stl/indexed_set.cpp}
-        
-\section{Range queries}
-\subsection{Derivada e integral de arrays}
-    \subsubsection{1D}
-        Usar array indexado desde $1$ con \texttt{A[0] = 0}. \\
-        Usar intervalos cerrado-cerrado (indexados desde $1$).
-        \cppfile[1-99]{range-queries/derivada-integral/1D.cpp}
-    \subsubsection{2D}
-        % \cppfile[1-99]{range-queries/prefix-diff/2D.cpp}
-\subsection{Fenwick tree}
-    \subsubsection{Range query point update}
-        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
-    \subsubsection{Range update point query}
-        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
-    \subsubsection{Range update range query}
-        % \cppfile[1-99]{estructuras_rango_grupo/.cpp}
-\subsection{Operaciones sin inverso}
-    \subsubsection{Sparse table}
-        Operacion asociativa \textbf{idempotente}
-        \cppfile[1-99]{estructuras_rango_monoide/sparse_table.cpp}
-    \subsubsection{Segment tree: range query point set}
-        Recordatorio: modificar elemento neutro
-        \cppfile[1-99]{estructuras_rango_monoide/segment_tree.cpp}
-       
-\section{Grafos}
-\subsection{Preprocesamiento}
-    \subsubsection{Clasificación de aristas}
-%       \cppfile[1]{preprocesamiento_grafos/.cpp}
-    \subsubsection{Puentes y puntos de articulación}
-%       \cppfile[1]{preprocesamiento_grafos/.cpp}
-    \subsubsection{DAG condensado}
-%       \cppfile[1]{preprocesamiento_grafos/.cpp}
-    \subsubsection{Kruskal}
-%       \cppfile[1]{preprocesamiento_grafos/.cpp}
-\subsection{Menor camino}
-    \subsubsection{BFS}
-        % \cppfile[1]{menor_camino_grafo/.cpp}
-    \subsubsection{Dijkstra}
-        % \cppfile[1]{menor_camino_grafo/.cpp}
-    \subsubsection{Floyd-Warshall}
-        % \cppfile[1]{menor_camino_grafo/.cpp}
-\subsection{Flujo y corte}
-    \subsubsection{Dinics}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Maximum matching}
-        % \cppfile[1]{/.cpp}
-\subsection{Árboles}
-    \subsubsection{Aplanamiento}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Ancestro común menor}
-        % \cppfile[1]{/.cpp}
-        
-\section{Strings}
-    \subsection{Trie: policy based}
-        % \cppfile[1]{/.cpp}
-    \subsection{Trie genérico}
-        % \cppfile[1]{/.cpp}
-    \subsection{Rabin-Karp}
-        % \cppfile[1]{/.cpp}
-    \subsection{Suffix Automata}
-        % \cppfile[1]{/.cpp}
+\input{range_queries/index.tex}
 
-\section{Matemática}
-\subsection{Aritmética}
-    \subsubsection{Techo de la división, piso de la raiz cuadrada, piso del log2}
-        \cppfile[1]{aritmetica/aritmetica.cpp}
-    \subsubsection{Aritmética en Zp}
-        \cppfile[1]{aritmetica/aritmetica_zp.cpp}
-    \subsubsection{Números combinatorios}
-        % \cppfile[9-9]{aritmetica/.cpp}
-\subsection{Teoría de números}
-\subsubsection{Test de primalidad}
-    \cppfile[1-99]{matematica/primetest.cpp}
-\subsection{Geometría}
-    \subsubsection{Template base}
-        \cppfile[1]{geometria/template_base.cpp}
-    \subsubsection{Punto/vector/recta}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Producto escalar y vectorial}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Área triángulo}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Fórmula de Herón}
-    % \cppfile[1]{/.cpp}
-    
-\section{Programación Dinámica}
-\subsection{Ejemplos de DP}
-    \subsubsection{DP en prefijo: }
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP en rango: }
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP en bitmask: traveling salesman}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP en árbol con toposort}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP en DAG: }
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP en número: knapsack}
-    % \cppfile[1]{/.cpp}
-    \subsubsection{Re-rooting DP}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{DP con Fenwick: número de subsecuencias de largo k}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Reconstruir solución}
-        % \cppfile[1]{/.cpp}
-\subsection{Optimizaciones}
-    \subsubsection{Recuperar un parámetro a partir de los otros}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Reducir complejidad de transición con una flag}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Optimización knapsack en árbol}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Optimización de Knuth}
-        % \cppfile[1]{/.cpp}
-    \subsubsection{Optimización D\&C}
-        % \cppfile[1]{/.cpp}
+\input{matematica/index.tex}
 
-\section{Algoritmos}
-    \subsection{Búsqueda binaria}
-        Si existe, idx de primer \texttt{true}
-        Si no, \texttt{d}
-        \cppfile[1-99]{algoritmos/busq_binaria.cpp}
-    \subsection{Búsqueda binaria paralela}
-    %   \cppfile[1-99]{algoritmos/.cpp}
-
-\section{Sin categorizar}
-    \subsection{Union find}
-    \subsection{Algoritmo de Mo}
-    \subsection{Min dequeue}
-    \subsection{Menor subarray que suma k}
-    \subsection{Subarray con mayor suma}
-    \subsection{Mayor subcadena común}
-    \subsection{Enumerar subconjuntos de un conjuto con bitmask}
-        \cppfile[1-99]{sin_categorizar/enumerar_subconjuntos.cpp}
+\input{sin_categorizar/index.tex}
 
 \section{Brainstorming}
-Graficar como puntos/grafos \\
-Pensarlo al revez \\
-¿Que propiedades debe cumplir una solución? \\
-Si existe una solución, ¿existe otra más simple? \\
-¿Hay elecciones independientes? \\
-¿El proceso es parecido a un algoritmo conocido? \\
+    \begin{itemize}
+        \item Graficar como puntos/grafos
+        \item Pensarlo al revez
+        \item ¿Que propiedades debe cumplir una solución?
+        \item Si existe una solución, ¿existe otra más simple?
+        \item ¿Hay elecciones independientes?
+        \item ¿El proceso es parecido a un algoritmo conocido?
+        \item Si es busca calcular $f(x)$ para todo $x$, calcular cuánto contribuye $x$ a $f(y)$ para los otros $y$
+    \end{itemize}
 
 \end{document}

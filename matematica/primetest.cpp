@@ -1,4 +1,4 @@
-struct primetest {
+struct Primetest {
     bool c[1000001]; vector<int> p;
     primetest () {
         p.reserve(1<<16); scn(i,2,1000000) if (!c[i]) {

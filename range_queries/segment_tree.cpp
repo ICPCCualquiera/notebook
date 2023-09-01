@@ -1,4 +1,4 @@
-template<class T> struct SegTree {
+templT struct SegmentTree {
     vector<T>& arr; int N;
     // Elegir operacion y neutro
     T id;
@@ -11,7 +11,7 @@ template<class T> struct SegTree {
     void set (int i, T v) {
         for(t[i += N] = v; i > 1; i >>= 1) t[i>>1] = op(t[i], t[i^1]);
     }
-    T q (int l, int r) {
+    T query (int l, int r) {
         T res = id;
         for (l += N, r += N; l < r; l >>= 1, r >>= 1) {
             if (l&1) res = op(res, t[l++]);
@@ -23,5 +23,5 @@ template<class T> struct SegTree {
 // Usar asi:
 vector<int> A = {...};
 
-SegTree<int> segtree = {A, A.size(), 0};
-segtree.make();
+SegmentTree<int> segment_tree = {A, A.size(), 0};
+segment_tree.make();

@@ -1,26 +1,27 @@
-// Usar array indexado desde 1 con A[0] = 0
-// Usar intervalos cerrado-cerrado (indexados desde 1)
-
-using ll = long long;
-
-vector<ll> derivada (vector<ll>& A) {
-    vector<ll> D(A.size());
-    forn(i, A.size() - 1) D[i] = A[i+1] - A[i];
+templT vector<T> diff_array (vector<T>& A) {
+    vector<T> D(A.size());
+    D[0] = A[0];
+    forn(i, D.size() - 1) D[i+1] = A[i+1] - A[i];
     return D;
 }
 
-void derivada_range_update (vector<ll>& D, int i, int j, ll v) {
-    D[i-1] += v;
-    D[j]   -= v;
+// Aplica +x en A[i] ... A[j] 
+templT void update_diff_array (vector<T>& D, int i, unsigned j, T x) {
+    D[i] += x;
+    if (j + 1 < D.size()) D[j+1] -= x;
 }
 
-vector<ll> integral (vector<ll>& A) {
-    vector<ll> I(A.size() + 1);
-    I[0] = 0;
-    forn(i, A.size()) I[i+1] = I[i] + A[i];
-    return I;
+templT vector<T> prefix_array (vector<T>& A) {
+    vector<T> P(A.size());
+    P[0] = A[0];
+    forn(i, P.size() - 1) P[i+1] = P[i] + A[i+1];
+    return P;
 }
 
-ll integral_range_query (vector<ll>& I, int i, int j) {
-    return I[j+1] - I[i];
+// Retorna A[i] + ... +  A[j]
+templT T query_prefix_array (vector<T>& P, int i, int j) {
+    T res = P[j];
+    if (i > 0) res -= P[i-1];
+    return res;
 }
+ 

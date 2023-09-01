@@ -1,6 +1,6 @@
 using AdjList = vector<vector<int>>;
 
-vector<int> KahnToposort (AdjList& G) {
+vector<int> kahn_toposort (AdjList& G) {
     int N = G.size();
     vector<int> indegree(N), visit(N), res;
     forn(u, N) for (int v : G[u]) indegree[v]++;
@@ -20,7 +20,3 @@ vector<int> KahnToposort (AdjList& G) {
     }
     return res;
 }
-
-// Usar asi:
-AdjList G = {...};
-vector<int> topo_ord = KahnToposort(G);

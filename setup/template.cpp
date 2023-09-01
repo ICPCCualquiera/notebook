@@ -10,12 +10,14 @@ using namespace std;
 #define endl         '\n'
 #define dbg(x)       cerr << #x << " = " << (x) << endl
 #define raya         cerr << "================" << endl
-template <typename A, typename B> ostream& operator << (ostream &o, pair<A,B>& p) { return o << p.fst << " " << p.snd; }
-template <typename T>             ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
+#define templT       template <class T>
+#define templAB      template <class A, class B>
+templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.first << " " << p.second; }
+templT  ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
 
 int main () { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
-    
 
-    return 0;
+
+   return 0;
 }

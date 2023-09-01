@@ -1,6 +1,6 @@
 using AdjList = vector<vector<int>>;
 
-bool EsBipartito (AdjList& G) {
+bool es_bipartito (AdjList& G) {
     vector<int> color(G.size(), -1);
     color[0] = 0;
     queue<int> bag;

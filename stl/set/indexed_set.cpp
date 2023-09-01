@@ -2,7 +2,7 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace  __gnu_pbds;
 
-template<class T> struct IndexedSet {
+templT struct IndexedSet {
     tree<
         T, null_type, less<T>,
         rb_tree_tag, tree_order_statistics_node_update
@@ -13,7 +13,7 @@ template<class T> struct IndexedSet {
     T    ith  (int i) { return *ms.find_by_order(i); }
 };
 
-template<class T> struct IndexedMultiset {
+templT struct IndexedMultiset {
     int t = 0; tree<
         pair<T, int>, null_type, less<pair<T, int>>,
         rb_tree_tag, tree_order_statistics_node_update

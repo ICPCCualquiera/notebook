@@ -13,7 +13,3 @@ struct DSU {
     }
     bool existe_camino (int x, int y) { return get(x) == get(y); }
 };
-
-// Usar asi:
-int N = ...;
-DSU dsu(N);

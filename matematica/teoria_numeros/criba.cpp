@@ -1,6 +1,6 @@
-struct Primetest {
+struct Criba {
     bool c[1000001]; vector<int> p;
-    primetest () {
+    Criba () {
         p.reserve(1<<16);
         for (int i = 2; i <= 1000000; i++) if (!c[i]) {
             p.pb(i);

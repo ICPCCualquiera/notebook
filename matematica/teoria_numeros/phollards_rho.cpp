@@ -1,17 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <vector>
-#include <cassert>
-#include <map>
-#include <algorithm>
-#include <cmath>
-using namespace std;
-#define dprint(v) cerr << #v"=" << v << endl //;)
-#define forr(i,a,b) for(int i=(a); i<(b); i++)
-#define forn(i,n) forr(i,0,n)
-typedef long long ll;
+using ll = long long;
 
 ll gcd(ll a, ll b){return a?gcd(b %a, a):b;}
 
@@ -81,30 +68,4 @@ void factRho (ll n){ //O (lg n)^3. un solo numero
 	ll factor = rho(n);
 	factRho(factor);
 	factRho(n/factor);
-}
-
-
-int main(){
-	ll n;
-	while(1){
-		n=abs((ll)rand()*rand()*rand()%(ll(1e18))+50);
-		dprint(n);
-		if(!rabin(n)){
-			//~ dprint(n);
-			ll ans = rho (n);
-			assert(!(n%ans) && ans>0);
-		}
-	}
-	n = 2063512844981574047LL;
-	while(cin >> n){
-		dprint(n);
-		if(rabin (n))
-			cout << n << " es primo.\n";
-		else{
-			ll ans = rho (n);
-			if (ans > n / ans) ans = n / ans;
-			printf ("%lld = %lld * %lld\n", n, ans, n / ans);
-		}
-    }
-    return 0;
 }

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define forall(it,v) for (auto it = begin(v); it != end(v); it++)
-#define forr(i,a,b)  for(int i = (a); i < (b); i++)
+#define forr(i,a,b)  for(int i = int(a); i < int(b); i++)
 #define forn(i,n)    forr(i,0,n)
 #define all(v)       begin(v), end(v)
 #define mp(a,b)      make_pair(a,b)

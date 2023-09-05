@@ -2,7 +2,7 @@ using AdjList = vector<vector<int>>;
 
 vector<int> Toposort (AdjList& G) {
     int N = G.size();
-    vector<int> indegree(N), visit(N), res;
+    vector<int> indegree(N), res;
     forn(u, N) for (int v : G[u]) indegree[v]++;
     // Elegir crierio de priorizacion cambiando el orden en el que se sacan
     // (por defecto el menor)

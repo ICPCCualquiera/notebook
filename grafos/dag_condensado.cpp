@@ -32,7 +32,7 @@ AdjList DAGCondensado (AdjList& G) {
       comp.clear();
    }
 
-   // Opcion 1: hacer compresion de coordenadas
+   // Opcion 1: hacer compresion de coordenadas: O(nlogn) lento
    int c = 0;
    map<int, int> coords;
    for (int   r :  raices) coords[r];
@@ -45,7 +45,7 @@ AdjList DAGCondensado (AdjList& G) {
 
    return SCC;
 
-   // Opcion 2: no hacer compresion y devolver raices
+   // Opcion 2: no hacer compresion y devolver raices (rapido)
    // AdjList SCC(N);
    // forn(u, N) for (auto [v, w] : G[u]) {
       // int ru = raiz[u], rv = raiz[v];

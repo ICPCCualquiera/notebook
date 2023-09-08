@@ -2,14 +2,10 @@ using ll = long long;
 
 ll gcd(ll a, ll b){return a?gcd(b %a, a):b;}
 
-ll mulmod (ll a, ll b, ll c) { //returns (a*b)%c, and minimize overfloor
-	ll x = 0, y = a%c;
-	while (b > 0){
-		if (b % 2 == 1) x = (x+y) % c;
-		y = (y*2) % c;
-		b /= 2;
-	}
-	return x % c;
+
+//COMPILAR CON G++20
+ll mulmod(ll a, ll b, ll m) {
+ return ll(__int128(a) * b % m);
 }
 
 ll expmod (ll b, ll e, ll m){//O(log b)

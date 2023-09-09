@@ -3,7 +3,6 @@ using namespace std;
 #define forall(it,v) for (auto it = begin(v); it != end(v); it++)
 #define forr(i,a,b)  for(int i = int(a); i < int(b); i++)
 #define forn(i,n)    forr(i,0,n)
-typedef long long ll;
 #define all(v)       begin(v), end(v)
 #define mp(a,b)      make_pair(a,b)
 #define pb           push_back
@@ -16,11 +15,8 @@ typedef long long ll;
 #define templAB      template <class A, class B>
 templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.first << " " << p.second; }
 templT  ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
-
+using ll = long long;
 
 int main () { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-
-
-
    return 0;
 }

@@ -1,4 +1,3 @@
-using ll = long long;
 templT using Matriz = vector<vector<T>>;
 const ll INF = LLONG_MAX / 4;
 

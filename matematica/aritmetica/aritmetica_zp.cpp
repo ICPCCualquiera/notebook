@@ -1,5 +1,3 @@
-using ll = long long;
-
 const ll mod = 1e9 + 7;
 
 ll resta_mod (ll a, ll b) { return (a - b + mod) % mod; }

@@ -1,4 +1,3 @@
-using ll = long long;
 struct Hedge { ll weight; int node; };
 bool operator < (const Hedge& a, const Hedge& b) { return a.weight > b.weight; }
 using AdjList = vector<vector<Hedge>>;

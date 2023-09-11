@@ -1,14 +1,19 @@
-using ll = long long;
+int primer_true (int i, int j, function<bool(int)> P, int def) {
+   while (j - i > 1) {
+      int m = i + ((j - i) >> 1);
+      P(m) ? j = m : i = m;
+   }
+   if (P(i)) return i;
+   if (P(j)) return j;
+   return def;
+}
 
-// Si existe, el primer i donde pred(i) == true
-// Si es todo false, devuelve d
-
-ll bsearch (ll i, ll j, bool (*pred)(ll), ll d) {
-    while (!(i + 1 == j)) {
-        ll m = i + ((j - i) >> 1);
-        pred(m) ? j = m : i = m;
-    }
-    if (pred(i)) return i;
-    if (pred(j)) return j;
-    return d;
+int ultimo_false (int i, int j, function<bool(int)> P, int def) {
+   while (j - i > 1) {
+      int m = i + ((j - i) >> 1);
+      P(m) ? j = m : i = m;
+   }
+   if (!P(j)) return j;
+   if (!P(i)) return i;
+   return def;
 }

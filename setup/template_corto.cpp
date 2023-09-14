@@ -5,6 +5,10 @@ using namespace std;
 #define mp(a,b)      make_pair(a,b)
 #define pb           push_back
 
-int main () {
+int main (int argc, char** argv) {
+   if (argc == 2) freopen("input", "r", stdin);
+
+   
+
    return 0;
 }

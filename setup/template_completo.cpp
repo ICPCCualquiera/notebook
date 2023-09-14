@@ -13,10 +13,14 @@ using namespace std;
 #define raya         cerr << "================" << endl
 #define templT       template <class T>
 #define templAB      template <class A, class B>
-templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.first << " " << p.second; }
+templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.fst << " " << p.snd; }
 templT  ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
-using ll = long long;
 
-int main () { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+
+int main (int argc, char** argv) { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+   if (argc == 2) freopen("input", "r", stdin);
+
+   
+
    return 0;
 }

@@ -1,6 +1,5 @@
-using ll = long long;
-
-vector<ll> compress (vector<ll>& A) {
+// Obtener valor original con D[A[i]]
+vector<ll> CompCoordenadas (vector<ll>& A) {
    int N = A.size();
    vector<ll> D = A;
    sort(all(D));

@@ -17,8 +17,7 @@ templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.fst << "
 templT  ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
 using ll = long long;
 
-int main (int argc, char** argv) { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-   if (argc == 2) freopen("input", "r", stdin);
+int main (int argc, char** argv) { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); if (argc == 2) freopen("input", "r", stdin);
 
    
 

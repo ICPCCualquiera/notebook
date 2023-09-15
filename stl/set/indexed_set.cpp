@@ -7,10 +7,10 @@ templT struct IndexedSet {
         T, null_type, less<T>,
         rb_tree_tag, tree_order_statistics_node_update
     > s;
-    void add  (T   x) { ms.insert(x); }
-    int  idx  (T   x) { return  ms.order_of_key(x); }
-    bool has  (T   x) { return  ms.find(x) != ms.end(); }
-    T    ith  (int i) { return *ms.find_by_order(i); }
+    void add  (T   x) { s.insert(x); }
+    int  idx  (T   x) { return  s.order_of_key(x); }
+    bool has  (T   x) { return  s.find(x) != ms.end(); }
+    T    ith  (int i) { return *s.find_by_order(i); }
 };
 
 templT struct IndexedMultiset {

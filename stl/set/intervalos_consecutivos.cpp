@@ -18,5 +18,8 @@ struct IntervalosConsecutivos {
     int max_intervalo () {
         return (*L.rbegin()).fst;
     }
+    int min_intervalo  () {
+        return (*L.begin()).fst;
+    }
 };
 

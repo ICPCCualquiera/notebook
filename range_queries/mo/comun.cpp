@@ -2,35 +2,32 @@ struct Query { int idx, i, j; };
 
 const int MOSIZE = 0 / 0; // ~sqrt(n) (entre 150 y 800)
 
-bool mosort (Query& p, Query& q) {
-    if (p.i / MOSIZE == q.i / MOSIZE) return p.j < q.j;
-    return p.i / MOSIZE < q.i / MOSIZE;
+bool mosort (Query const& p, Query const& q) {
+   int bp = p.i / MOSIZE, bq = q.i / MOSIZE;
+   if (bp == bq) return bq % 2 ? p.j > q.j : p.j < q.j;
+   return bp < bq;
 }
 
 vector<int> mosolve (vector<Query>& queries) {
     sort(all(queries), mosort);
-    vector<int> res(queries.size());
+    vector<int> res(sz(queries));
     // Inicializar estructura
-    Query a = { -1, -1, -1 };
+    Query a = { -1, 0, -1 };
     for (auto q : queries) {
         while (a.i > q.i) {
             a.i--;
-            // Estructura.add(a.i)
-            assert(0);
+            assert(0); // Estructura.add(a.i)
         }
         while (a.j < q.j) {
             a.j++;
-            // Estructura.add(a.j)
-            assert(0);
+            assert(0); // Estructura.add(a.j)
         }
         while (a.i < q.i) {
-            // Estructura.erase(a.i)
-            assert(0);
+            assert(0); // Estructura.erase(a.i)
             a.i++;
         }
         while (a.j > q.j) {
-            // Estructura.erase(a.j)
-            assert(0);
+            assert(0); // Estructura.erase(a.j)
             a.j--;
         }
         res[q.idx] = 0 / 0; // Resolver query

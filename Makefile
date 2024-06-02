@@ -1,7 +1,6 @@
-all: eldiego.pdf
+all: notebook.pdf
 
 AUX_EXTS:= aux|nav|snm|log|toc|vrb|dvi|idx|fdb_latexmk|fls|out|ilg|ind
-
 
 %.pdf: %.tex
 		latexmk -pdf -pdflatex="pdflatex -interactive=nonstopmode" -use-make -cd  $<

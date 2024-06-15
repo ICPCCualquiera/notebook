@@ -1,25 +1,23 @@
-struct Hedge { ll weight; int node; };
-bool operator < (const Hedge& a, const Hedge& b) { return a.weight > b.weight; }
-using AdjList = vector<vector<Hedge>>;
-
-void Dijkstra (AdjList& G, int s, vector<ll>& dist, vector<int>& parent) {
-   int N = G.size();
-   dist.assign(N, LLONG_MAX);
-   dist[s] = 0;
-   parent.assign(N, -1);
-   parent[s] = s;
-   priority_queue<Hedge> bag;
-   for (bag.push({0, s}); bag.size();) {
-      auto [d, u] = bag.top();
-      bag.pop();
-      if (d > dist[u]) continue;
-      for (auto [w, v] : G[u]) {
-         ll relax = d + w;
-         if (relax < dist[v]) {
-            dist[v] = relax;
-            parent[v] = u;
-            bag.push({relax, v});
-         }
-      }
-   }
+#pragma region // dijkstra
+using GrafoPond = vector<vector<pair<ll, int>>>;
+auto dijkstra (GrafoPond& grafo, int origen) {
+    vector<ll>  dist(sz(grafo), LLONG_MAX);
+    vector<int> padre(sz(grafo), -1);
+    dist[origen] = 0;
+    padre[origen] = origen;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> visitados;
+    for (visitados.push({0, origen}); visitados.size();) {
+        auto [du, u] = visitados.top();
+        visitados.pop();
+        if (du > dist[u]) continue; // (du,u) es un valor viejo
+        for (auto [w, v] : grafo[u]) {
+            ll nueva_dist = du + w;
+            if (nueva_dist >= dist[v]) continue; // no mejora
+            dist[v] = nueva_dist;
+            padre[v] = u;
+            visitados.push({nueva_dist, v});
+        }
+    }
+    return mt(dist, padre);
 }
+#pragma endregion

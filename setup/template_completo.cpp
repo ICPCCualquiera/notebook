@@ -1,9 +1,10 @@
+#pragma region // template (para vscode; en otros editores usar #if 1 / #endif)
 #include <bits/stdc++.h>
 using namespace std;
 #define forr(i,a,b)  for(int i = int(a); i < int(b); i++)
 #define forn(i,n)    forr(i,0,n)
 #define all(v)       begin(v), end(v)
-#define mp(a,b)      make_pair(a,b)
+#define mt(...)      make_tuple(__VA_ARGS__)
 #define sz(v)        int(size(v))
 #define pb           push_back
 #define fst          first
@@ -13,13 +14,12 @@ using namespace std;
 #define raya         cerr << "================" << endl
 #define templT       template <class T>
 #define templAB      template <class A, class B>
-templAB ostream& operator << (ostream& o, pair<A,B>& p) { return o << p.fst << " " << p.snd; }
-templT  ostream& operator << (ostream& o, vector<T>& v) { forall(it,v) { o << *it << " "; } return o; }
 using ll = long long;
+using Grafo = vector<vector<int>>;
+#pragma endregion
 
 int main (int argc, char** argv) { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); if (argc == 2) freopen(argv[1], "r", stdin);
 
-   
 
    return 0;
 }

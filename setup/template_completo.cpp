@@ -5,7 +5,7 @@ using namespace std;
 #define forn(i,n)    forr(i,0,n)
 #define all(v)       begin(v), end(v)
 #define mt(...)      make_tuple(__VA_ARGS__)
-#define sz(v)        int(size(v))
+#define sz(v)        int(v.size())
 #define pb           push_back
 #define fst          first
 #define snd          second

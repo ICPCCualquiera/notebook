@@ -1,9 +1,10 @@
-vector<Punto> intersect_circ_recta (Sca r, Sca a, Sca b, Sca c) {
+vector<Punto> intersect_circulo_recta (Sca radio, Sca a, Sca b, Sca c) {
+    // a, b, c := parametros recta general
     Sca z = a*a + b*b;
-    Punto p = {-a*c / z, -b*c / z};
-    if (flt_le(r*r*z, c*c)) return {};
-    if (flt_eq(r*r*z, c*c)) return {p};
-    Sca m = sqrtl((r*r - c*c / z) / z);
+    Punto punto_mas_cercano_origen = {-a*c / z, -b*c / z};
+    if (flt_le(radio*radio*z, c*c)) return {}; // dist_origen > radio
+    if (flt_eq(radio*radio*z, c*c)) return {punto_mas_cercano_origen}; // dist_origen = radio
+    Sca m = sqrtl((radio*radio - c*c / z) / z);
     Punto d1 = { b*m, -a*m }, d2 = { -b*m,  a*m };
-    return { p + d1, p + d2 };
+    return { punto_mas_cercano_origen + d1, punto_mas_cercano_origen + d2 };
 }

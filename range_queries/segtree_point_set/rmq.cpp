@@ -20,7 +20,8 @@ struct SegtreeRMQ {
 auto SegtreeRMQ_crear (vector<int>& A) {
     vector<int> tree(2 * sz(A), INT_MIN);
     forn(i, sz(A)) tree[i + sz(A)] = A[i];
-    for (int i = sz(A) - 1; i; i--) tree[i] = max(tree[2*i], tree[2*i + 1]);
+    for (int i = sz(A) - 1; i; i--)
+        tree[i] = max(tree[2*i], tree[2*i + 1]);
     return SegtreeRMQ { tree };
 }
 #pragma endregion

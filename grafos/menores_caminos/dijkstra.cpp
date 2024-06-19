@@ -1,6 +1,6 @@
-#pragma region // dijkstra
+#pragma region // Dijkstra
 using GrafoPond = vector<vector<pair<ll, int>>>;
-auto dijkstra (GrafoPond& grafo, int origen) {
+auto Dijkstra (GrafoPond& grafo, int origen) {
     vector<ll>  dist(sz(grafo), LLONG_MAX);
     vector<int> padre(sz(grafo), -1);
     dist[origen] = 0;

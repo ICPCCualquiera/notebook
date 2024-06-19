@@ -1,4 +1,4 @@
-#pragma region // template (para vscode; en otros editores usar #if 1 / #endif)
+#pragma region // (vscode; en otros editores usar #if 1 / #endif)
 #include <bits/stdc++.h>
 using namespace std;
 #define forr(i,a,b)  for(int i = int(a); i < int(b); i++)
@@ -18,7 +18,9 @@ using ll = long long;
 using Grafo = vector<vector<int>>;
 #pragma endregion
 
-int main (int argc, char** argv) { ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); if (argc == 2) freopen(argv[1], "r", stdin);
+int main (int argc, char** argv) {
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    if (argc == 2) freopen(argv[1], "r", stdin);
 
 
    return 0;

@@ -1,3 +1,4 @@
+#pragma region // template Mo
 struct Query { int idx, i, j; };
 
 const int MOSIZE = 0 / 0; // ~sqrt(n) (entre 150 y 800)
@@ -7,6 +8,7 @@ bool mosort (Query const& p, Query const& q) {
    if (bp == bq) return bq % 2 ? p.j > q.j : p.j < q.j;
    return bp < bq;
 }
+#pragma endregion
 
 vector<int> mosolve (vector<Query>& queries) {
     sort(all(queries), mosort);

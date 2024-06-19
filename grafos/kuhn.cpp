@@ -2,7 +2,7 @@ vector<int> kuhn_matching (AdjList& grafo) {
     vector<int> match(sz(grafo), -1);
     vector<bool> visitado(sz(grafo));
 
-    function<bool(int)> kuhn_dfs = [&](int u) -> bool {
+    auto kuhn_dfs = [&](int u) -> bool {
         if (visitado[u]) return false;
         visitado[u] = true;
         for (int v : grafo[u]) if (match[v] == -1 || kuhn_dfs(match[v])) {

@@ -1,9 +1,12 @@
 #pragma region // ArrayEnlazado
 struct ArrayEnlazado {
-    map<int, set<int>> ocurrencias; // ocurrencias[x] := { i | arr[i] = x }
+    // ocurrencias[x] := { i | arr[i] = x }
+    // prevA[i] := max j tq. j < i && arr[j] = arr[i] (def.  -1)
+    // nextA[i] := min j tq. i < j && arr[i] = arr[j] (def. sz(arr))
+    map<int, set<int>> ocurrencias; 
     vector<int> arr;
-    vector<int> prevA; // prevA[i] := max j tq. j < i && arr[j] = arr[i] (def.  -1)
-    vector<int> nextA; // nextA[i] := min j tq. i < j && arr[i] = arr[j] (def. sz(arr))
+    vector<int> prevA; 
+    vector<int> nextA;
     void quitar (int i) {
         int x = arr[i];
         int ia = prevA[i], ib = nextA[i];
@@ -14,8 +17,12 @@ struct ArrayEnlazado {
     }
     void agregar (int i, int x) {
         arr[i] = x;
-        if (ocurrencias[x].empty()) { ocurrencias[x].insert(i); return; }
-        int m = *ocurrencias[x].begin(), M = *ocurrencias[x].rbegin();
+        if (ocurrencias[x].empty()) {
+            ocurrencias[x].insert(i);
+            return;
+        }
+        int m = *ocurrencias[x].begin();
+        int M = *ocurrencias[x].rbegin();
         ocurrencias[x].insert(i);
         if (m < i) {
             int ia = *prev(ocurrencias[x].lower_bound(i));

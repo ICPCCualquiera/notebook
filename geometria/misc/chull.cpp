@@ -1,27 +1,37 @@
-struct pto{
-	ll x, y; int t;
-	pto(ll x=0, ll y=0, int t = -1):x(x),y(y), t(t){}
-	pto operator-(pto a){return pto(x-a.x, y-a.y);}
-	ll operator*(pto a){return x*a.x+y*a.y;}
-	ll operator^(pto a){return x*a.y-y*a.x;}
-	bool left(pto q, pto r){return ((q-*this)^(r-*this))>0;}
-	bool operator<(const pto &a) const{return x<a.x || (x==a.x && y<a.y);}
-  bool operator==(pto a){return x==a.x && y==a.y;}
-};
-//stores convex hull of P in S, CCW order
-//left must return >=0 to delete collinear points!
-void CH(vector<pto>& P, vector<pto> &S){
-	S.clear();
-	sort(P.begin(), P.end());//first x, then y
-	forn(i, sz(P)){//lower hull
-		while(sz(S)>= 2 && S[sz(S)-1].left(S[sz(S)-2], P[i])) S.pop_back();
-		S.pb(P[i]);
-	}
-	S.pop_back();
-	int k=sz(S);
-	dforn(i, sz(P)){//upper hull
-		while(sz(S) >= k+2 && S[sz(S)-1].left(S[sz(S)-2], P[i])) S.pop_back();
-		S.pb(P[i]);
-	}
-	S.pop_back();
+vector<Punto> convex_hull (vector<Punto>& puntos, bool incluir_colineales = false) {
+    vector<Punto> P = puntos;
+
+    Punto p0 = *min_element(all(P), [](Punto a, Punto b) { return mt(a.y, a.x) < mt(b.y, b.x); });
+
+    auto orientation = [&](const Punto& a, const Punto& b, const Punto& c) {
+        Sca area = (b - a) ^ (c - b);
+        if (sca_le(area, 0)) return -1;
+        if (sca_le(0, area)) return +1;
+        return 0;
+    };
+
+    sort(all(P), [&](const Punto& a, const Punto& b) {
+        int o = orientacion(p0, a, b);
+        if (o == 0) return sca_le(dist2(p0, a), dist2(p0, b));
+        return o < 0;
+    });
+
+    if (incluir_colineales) {
+        int i = sz(P) - 1;
+        while (i >= 0 && orientacion(p0, P[i], P.back()) == 0) i--;
+        reverse(P.begin() + i + 1, P.end());
+    }
+
+    vector<Punto> res;
+    forn(i, sz(P)) {
+        while (sz(res) > 1) {
+            int o = orientacion(res[sz(res) - 2], res.back(), P[i]);
+            if (o < 0 || (incluir_colineales && o == 0)) break;
+            res.pop_back();
+        }
+        res.pb(P[i]);
+    }
+    if (!incluir_colineales && sz(res) == 2 && res[0] == res[1]) res.pop_back();
+
+    return res;
 }
